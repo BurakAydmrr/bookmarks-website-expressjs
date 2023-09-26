@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">BookMarks System</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/new_link">New Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Which Group
+                  </a>
+                
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <% Array.from(links).forEach(function(item) { %>
+
+                    <li><a class="dropdown-item" href="/file_grups?file=<%= item.file_grup %>"> <%= item.file_grup %> </a></li>
+                    <% }); %>
+                  
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            
+    
+          </div>
+        </div>
+      </nav>   
+      
+<div class="container">
+
+    <div class="row">
+
+
+
+
+      <% Array.from(group).forEach(function(item) { %>
+        <div class="col-md-3">
+            <div class="card mt-4">
+              <div class="card-header">
+               Link Name :   : <b><%= item.linkname %></b> 
+              </div>
+              <div class="card-body">
+                <p class="card-text"> Description : <%= item.description %> </p>
+                <p class="card-text" > File Grup : <%= item.file_grup %></p>
+                <a href=" <%= item.link %>" target="_blank" class="btn btn-primary">Go To Link</a>
+              </div>
+            </div>
+          </div>
+       
+       
+      <% }); %>
+  
+    </div>
+    </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>    
+</body>
+</html>
+
