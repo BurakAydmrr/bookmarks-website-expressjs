@@ -30,6 +30,7 @@
 
 ## Note : 
 #### If you want, we can run it with docker
+#### The purpose of the project is to learn new things in the project.
 
 
 
